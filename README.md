@@ -38,3 +38,15 @@ message database: username, uuid, message, expiry date
 relay mode? for connecting local networks over the internet
 
 broadcast heartbeat to everyone else? every 10 seconds?
+
+peer to peer encryption for direct messages? or group shared secret to decrypt messages? right now everything is 100% in the clear.
+
+shared secret: for group private chats, select a shared secret via some other means, use that to decrypt messages, send using PGP?
+
+## identity problem
+
+problem: how do you make a distributed system with no central authority that allows users to be unique and verified while all data is fully public and distributed?
+
+public key digital signatures? store all identities with public keys? http://stackoverflow.com/questions/10782826/digital-signature-for-a-file-using-openssl
+
+so sign every message with user's private key, everyone needs to have everyone else's public keys, verify each message before accepting it, store and redistribute signed
