@@ -47,6 +47,6 @@ shared secret: for group private chats, select a shared secret via some other me
 
 problem: how do you make a distributed system with no central authority that allows users to be unique and verified while all data is fully public and distributed?
 
-public key digital signatures? store all identities with public keys? http://stackoverflow.com/questions/10782826/digital-signature-for-a-file-using-openssl
+public key digital signatures? store all identities with public keys? http://www.codealias.info/technotes/openssl_rsa_sign_and_verify_howto
 
 so sign every message with user's private key, everyone needs to have everyone else's public keys, verify each message before accepting it, store and redistribute signed
