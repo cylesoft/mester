@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "dependencies": {
-    "node-uuid": "^1.4.2"
+    "node-uuid": "^1.4.2",
+    "keypair": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {

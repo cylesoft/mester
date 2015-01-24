@@ -33,7 +33,9 @@ CLI stuff:
 - listen for new messages
 - listen for message archive requests
 
-message database: username, uuid, message, expiry date
+message database: username, uuid, message, signed message, expiry date
+
+user database: username, uuid, public key
 
 relay mode? for connecting local networks over the internet
 

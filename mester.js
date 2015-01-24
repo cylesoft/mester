@@ -10,6 +10,7 @@ var readline = require('readline');
 var dgram = require('dgram');
 var fs = require('fs');
 var uuid = require('node-uuid');
+var keypair = require('keypair');
 
 var rl = readline.createInterface(process.stdin, process.stdout);
 var socket = dgram.createSocket('udp4');
@@ -17,6 +18,7 @@ var identity_filename = 'identity.mester';
 
 var this_username = 'nobody';
 var this_uuid = '000';
+var this_keypair = {};
 var broadcast_address = '255.255.255.255';
 var mester_port = 37777;
 
@@ -27,12 +29,15 @@ function identity_step() {
 		if (err) {
 			console.log('No identity file present, creating one for you!');
 			rl.question('Your username? ', function(line) {
+				console.log('Saving username, UUID, and generating public/private keypair.');
+				console.log('This may take a few seconds...');
 				this_username = line.trim();
 				this_uuid = uuid.v4();
-				var file_contents = JSON.stringify({ "username": this_username, "uuid": this_uuid });
+				this_keypair = keypair({bits:2048});
+				var file_contents = JSON.stringify({ "username": this_username, "uuid": this_uuid, "public_key": this_keypair.public, "private_key": this_keypair.private });
 				fs.writeFile(identity_filename, file_contents, { "encoding": "utf8" }, function (err) {
 					if (err) { throw err };
-					console.log('Saved identity, continuing.');
+					console.log('Saved identity and keypair, continuing.');
 					connection_step();
 				});
 			});
@@ -43,7 +48,9 @@ function identity_step() {
 			//console.log(identity);
 			this_username = identity.username;
 			this_uuid = identity.uuid;
-			console.log('Loaded identity `'+this_username+'` ('+this_uuid+')');
+			this_keypair.public = identity.public_key;
+			this.keypair.private = identity.private_key;
+			console.log('Loaded identity `'+this_username+'` ('+this_uuid+') with public/private keypair.');
 			connection_step();
 		}
 	});
