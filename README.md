@@ -46,6 +46,10 @@ Get other people to use it or you'll just be talking to yourself.
 
 ## unstructured notes/plans/to-dos/whatever
 
+status feed like twitter? just another channel? following certain people?
+
+avatars? really simple 256-color 8-bit type things, to save on disk space?
+
 relay mode? for connecting local networks over the internet... let admin decide max relays? start with 10? network overlap: how to stop echo chambers of relays sending to relays on the same network. check IP?
 
 broadcast heartbeat to everyone else? every 10 seconds?
