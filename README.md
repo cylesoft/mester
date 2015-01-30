@@ -52,7 +52,7 @@ broadcast heartbeat to everyone else? every 10 seconds?
 
 peer to peer encryption for direct messages? or group shared secret to decrypt messages? right now everything is 100% in the clear.
 
-"private channel" with shared secret: for group private chats, select a shared secret via some other means, use that to decrypt messages, send using PGP? or whatever node-crypto provides?
+"private channel" with shared secret: for group private chats, select a shared secret via some other means, use that to decrypt messages, send using PGP? or whatever node-crypto provides? see: http://lollyrock.com/articles/nodejs-encryption/
 
 ## old unstructured notes
 
