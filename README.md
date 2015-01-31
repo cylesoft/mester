@@ -23,24 +23,26 @@ Get other people to use it or you'll just be talking to yourself.
 ## structured/actual to-do list
 
 - GUI using nw.js + io.js ?
-	- identity window
-	- user presence window
-	- channel list window
-	- messages window
+	- identity pane
+	- user presence pane
+	- channel list pane
+	- messages pane
+	- debug view (hidden by default)
+	- settings panel (hidden by default)
 - every message needs a UUID
 - ability to flush local identity, start a new one
 - ability to set default expiration times for local storage
 - traffic types/messages
-	- presence/heartbeat message: uuid of user, local time
+	- initial presence message: uuid of user, local time
 	- public key response: uuid of user, username, public key, local time
 	- chat message: uuid of message, uuid of sender, uuid of channel, message, message signature, local time
 	- request for channel list: uuid of channel, channel name
-	- request for all history: digest of chat messages from X time
-	- request for UUID's history: digest of chat messages from X time from Y user uuid
+	- request for history: digest of chat messages from X time, or from Y user uuid
 - local storage of stuff, all can expire
 	- identities/users: uuid of user, username, public key, expire time
 	- messages: uuid of message, uuid of sender, message, message signature, expire time
 	- channel list: uuid of channel, channel name, passphrase if available, expire time
+	- messages and identities you're not following or subscribed to go away quicker
 - relay mode
 	- send messages being sent around the local network to other relay nodes
 
@@ -48,13 +50,13 @@ Get other people to use it or you'll just be talking to yourself.
 
 status feed like twitter? just another channel? following certain people?
 
-avatars? really simple 256-color 8-bit type things, to save on disk space?
+avatars? really simple 256-color 8-bit type things, to save on disk space? 12kb 70x70 PNGs? saved in base64 for use as data URIs?
 
 relay mode? for connecting local networks over the internet... let admin decide max relays? start with 10? network overlap: how to stop echo chambers of relays sending to relays on the same network. check IP?
 
-broadcast heartbeat to everyone else? every 10 seconds?
-
 peer to peer encryption for direct messages? or group shared secret to decrypt messages? right now everything is 100% in the clear.
+
+leverage heartbeat by using last sent message's received time, instead of a dedicated heartbeat packet.
 
 "private channel" with shared secret: for group private chats, select a shared secret via some other means, use that to decrypt messages, send using PGP? or whatever node-crypto provides? see: http://lollyrock.com/articles/nodejs-encryption/
 
@@ -74,6 +76,8 @@ CLI stuff:
 message database: username, uuid, message, signed message, expiry date
 
 user database: username, uuid, public key
+
+broadcast heartbeat to everyone else? every 10 seconds? no, too much traffic.
 
 ## identity problem
 
