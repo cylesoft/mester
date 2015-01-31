@@ -8,3 +8,42 @@ body {
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 }
+
+div.identity-panel {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30%;
+	height: 30%;
+	background-color: #ffa9a9;
+	padding: 1em;
+}
+
+div.channels-panel {
+	position: absolute;
+	top: 30%;
+	right: 0;
+	width: 30%;
+	height: 30%;
+	background-color: #b0ffac;
+	padding: 1em;
+}
+
+div.users-panel {
+	position: absolute;
+	top: 60%;
+	right: 0;
+	width: 30%;
+	height: 40%;
+	background-color: #acf8ff;
+	padding: 1em;
+}
+
+div.messages-panel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 70%;
+	height: 100%;
+	padding: 1em;
+}
