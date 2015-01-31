@@ -1,0 +1,30 @@
+{
+  "name": "mester",
+  "version": "0.0.1",
+  "description": "A mesh network messaging thing.",
+  "main": "index.html",
+  "window": {
+      "toolbar": true,
+      "width": 800,
+      "height": 600
+  },
+  "dependencies": {
+    "node-uuid": "^1.4.2",
+    "keypair": "^1.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cylesoft/mester.git"
+  },
+  "keywords": [
+    "messaging",
+    "mesh",
+    "network"
+  ],
+  "author": "Cyle Gage <cylegage@gmail.com> (http://cylegage.com/)",
+  "bugs": {
+    "url": "https://github.com/cylesoft/mester/issues"
+  },
+  "homepage": "https://github.com/cylesoft/mester"
+}
