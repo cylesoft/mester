@@ -87,3 +87,9 @@ problem: how do you make a distributed system with no central authority that all
 public key digital signatures? store all identities with public keys? http://www.codealias.info/technotes/openssl_rsa_sign_and_verify_howto
 
 so sign every message with user's private key, everyone needs to have everyone else's public keys, verify each message before accepting it, store and redistribute signed message
+
+## see also
+
+- http://maidsafe.net/
+- http://techcrunch.com/2015/01/10/decentralize-all-the-things/
+- http://www.theverge.com/2014/12/10/7361603/bittorrenet-wants-to-change-the-way-the-web-is-built
