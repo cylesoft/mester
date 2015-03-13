@@ -44,6 +44,7 @@ Get other people to use it or you'll just be talking to yourself.
 	- channel list: uuid of channel, channel name, passphrase if available, expire time
 	- messages and identities you're not following or subscribed to go away quicker
 	- store your own messages... forever. you are the guaranteed source.
+	- use https://github.com/louischatriot/nedb ?
 - relay mode
 	- send messages being sent around the local network to other relay nodes
 
